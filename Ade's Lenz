@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ade's Lenz Sports Photography</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f8f8f8;
+            color: #333;
+        }
+        header {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #ff8c00;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        section {
+            padding: 2rem;
+            text-align: center;
+        }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background: #ff8c00;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .rating-form input, .rating-form textarea {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .rating-form button {
+            background: #ff8c00;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .stars {
+            display: flex;
+            justify-content: center;
+            flex-direction: row-reverse;
+            margin: 10px 0;
+        }
+        .stars input {
+            display: none;
+        }
+        .stars label {
+            font-size: 2rem;
+            color: #ccc;
+            cursor: pointer;
+        }
+        .stars input:checked ~ label,
+        .stars label:hover,
+        .stars label:hover ~ label {
+            color: #ff8c00;
+        }
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ade's Lenz Sports Photography</h1>
+        <p>Capturing every moment on the court</p>
+    </header>
+    <nav>
+        <a href="#services">Services & Pricing</a>
+        <a href="#contact">Book a Session</a>
+        <a href="#rate">Rate My Work</a>
+    </nav>
+    <section id="services">
+        <h2>Services & Pricing</h2>
+        <p>Our primary service includes:</p>
+        <ul>
+            <li>Gameday Photos & Videos</li>
+        </ul>
+        <p>Pricing available upon request.</p>
+    </section>
+    <section id="contact">
+        <h2>Book a Session</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone" required>
+            <select required>
+                <option value="" disabled selected>Type of Session</option>
+                <option value="Gameday Photos & Videos">Gameday Photos & Videos</option>
+            </select>
+            <input type="date" placeholder="Preferred Date" required>
+            <textarea placeholder="Additional Details: Team, location, special requests..." rows="5"></textarea>
+            <button type="submit">Request Booking</button>
+        </form>
+    </section>
+    <section id="rate">
+        <h2>Rate My Work</h2>
+        <form class="rating-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <div class="stars">
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+            </div>
+            <textarea placeholder="Comments or Feedback" rows="5"></textarea>
+            <button type="submit">Submit Rating</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 Ade's Lenz Sports Photography. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
