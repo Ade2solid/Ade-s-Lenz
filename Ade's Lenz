@@ -1,153 +1,101 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ade's Lenz Sports Photography</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #f8f8f8;
-            color: #333;
-        }
-        header {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 1.5rem 0;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #ff8c00;
-            padding: 0.5rem 0;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: bold;
-        }
-        section {
-            padding: 2rem;
-            text-align: center;
-        }
-        .contact-form input, .contact-form textarea, .contact-form select {
-            display: block;
-            width: 80%;
-            margin: 10px auto;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact-form button {
-            background: #ff8c00;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .rating-form input, .rating-form textarea {
-            display: block;
-            width: 80%;
-            margin: 10px auto;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .rating-form button {
-            background: #ff8c00;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .stars {
-            display: flex;
-            justify-content: center;
-            flex-direction: row-reverse;
-            margin: 10px 0;
-        }
-        .stars input {
-            display: none;
-        }
-        .stars label {
-            font-size: 2rem;
-            color: #ccc;
-            cursor: pointer;
-        }
-        .stars input:checked ~ label,
-        .stars label:hover,
-        .stars label:hover ~ label {
-            color: #ff8c00;
-        }
-        footer {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ade's Lenz Sports Photography</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<style>
+    body {margin:0;font-family:'Anton',sans-serif;background:#ff8c00;color:#000;}
+    header {background:#ff8c00;color:#000;text-align:center;padding:1.5rem 0;position:relative;z-index:100;}
+    header h1 {margin:0;font-size:2rem;}
+    nav {display:flex;justify-content:center;flex-wrap:wrap;background:#ff8c00;padding:0.5rem 0;position:sticky;top:0;z-index:99;}
+    nav a {color:#000;text-decoration:none;margin:0.5rem 1rem;font-weight:bold;}
+    section {padding:2rem;text-align:center;background:#ff8c00;color:#000;}
+    .contact-form input, .contact-form textarea, .contact-form select, .rating-form input, .rating-form textarea {
+        display:block;
+        width:300px;
+        margin:10px auto;
+        padding:10px;
+        border:2px solid #000;
+        border-radius:8px;
+        color:#000;
+        background:#fff;
+        font-size:1rem;
+        transition: all 0.3s ease;
+    }
+    .contact-form textarea, .rating-form textarea {height:80px;}
+    .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus,
+    .rating-form input:focus, .rating-form textarea:focus {outline:none;border-color:#0000ff;box-shadow:0 0 5px rgba(0,0,255,0.5);}
+    .contact-form button, .rating-form button {background:#0000ff;color:#fff;border:none;padding:12px 25px;cursor:pointer;border-radius:8px;font-family:'Anton',sans-serif;font-size:1rem;transition: background 0.3s ease;}
+    .contact-form button:hover, .rating-form button:hover {background:#000099;}
+    .stars {display:flex;justify-content:center;flex-direction:row-reverse;margin:10px 0;}
+    .stars input {display:none;}
+    .stars label {font-size:2rem;color:#ccc;cursor:pointer;}
+    .stars input:checked ~ label, .stars label:hover, .stars label:hover ~ label {color:#0000ff;}
+    footer {background:#ff8c00;color:#000;text-align:center;padding:1rem 0;margin-top:2rem;}
+    .thank-message {display:none;color:green;font-weight:bold;margin-top:10px;}
+    @media (max-width:768px){header h1{font-size:1.5rem;} nav{flex-direction:column;padding:1rem 0;} nav a{margin:0.5rem 0;} .contact-form input, .contact-form textarea, .contact-form select, .rating-form input, .rating-form textarea{width:90%;} .contact-form button, .rating-form button{width:90%;}}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Ade's Lenz Sports Photography</h1>
-        <p>Capturing every moment on the court</p>
-    </header>
-    <nav>
-        <a href="#services">Services & Pricing</a>
-        <a href="#contact">Book a Session</a>
-        <a href="#rate">Rate My Work</a>
-    </nav>
-    <section id="services">
-        <h2>Services & Pricing</h2>
-        <p>Our primary service includes:</p>
-        <ul>
-            <li>Gameday Photos & Videos</li>
-        </ul>
-        <p>Pricing available upon request.</p>
-    </section>
-    <section id="contact">
-        <h2>Book a Session</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Phone" required>
-            <select required>
-                <option value="" disabled selected>Type of Session</option>
-                <option value="Gameday Photos & Videos">Gameday Photos & Videos</option>
-            </select>
-            <input type="date" placeholder="Preferred Date" required>
-            <textarea placeholder="Additional Details: Team, location, special requests..." rows="5"></textarea>
-            <button type="submit">Request Booking</button>
-        </form>
-    </section>
-    <section id="rate">
-        <h2>Rate My Work</h2>
-        <form class="rating-form">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email" required>
-            <div class="stars">
-                <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
-                <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
-                <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
-                <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
-                <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
-            </div>
-            <textarea placeholder="Comments or Feedback" rows="5"></textarea>
-            <button type="submit">Submit Rating</button>
-        </form>
-    </section>
-    <footer>
-        <p>&copy; 2025 Ade's Lenz Sports Photography. All Rights Reserved.</p>
-    </footer>
+<header>
+<h1>Ade's Lenz Sports Photography</h1>
+<p>Southwest Calgary Photographer</p>
+</header>
+<nav>
+<a href="#services">Services & Pricing</a>
+<a href="#contact">Book a Session</a>
+<a href="#rate">Rate My Work</a>
+</nav>
+<section id="services">
+<h2>Services & Pricing</h2>
+<p>Our primary service includes:</p>
+<ul><li>Gameday Photos & Videos</li></ul>
+<p>Pricing available upon request.</p>
+</section>
+<section id="contact">
+<h2>Book a Session</h2>
+<form class="contact-form" action="https://formspree.io/f/xeorepnp" method="POST">
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="phone" placeholder="Phone" required>
+<select name="session" required>
+<option value="" disabled selected>Type of Session</option>
+<option value="Gameday Photos & Videos">Gameday Photos & Videos</option>
+</select>
+<input type="date" name="date" placeholder="Preferred Date" required>
+<textarea name="details" placeholder="Additional Details: Team, location, special requests..."></textarea>
+<button type="submit">Request Booking</button>
+<div class="thank-message">Thank you! Your booking has been submitted.</div>
+</form>
+</section>
+<section id="rate">
+<h2>Rate My Work</h2>
+<form class="rating-form" action="https://formspree.io/f/xeorepnp" method="POST">
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<div class="stars">
+<input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+<input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+<input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+<input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+<input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+</div>
+<textarea name="comments" placeholder="Comments or Feedback"></textarea>
+<button type="submit">Submit Rating</button>
+<div class="thank-message">Thank you! Your rating has been submitted.</div>
+</form>
+</section>
+<footer>
+<p>&copy; 2025 Ade's Lenz Sports Photography. All Rights Reserved.</p>
+</footer>
+<script>
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+navLinks.forEach(link => {link.addEventListener('click', function(e){e.preventDefault();document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});
+const forms = document.querySelectorAll('form');
+forms.forEach(form => {form.addEventListener('submit', function(e){e.preventDefault();const thankMsg=form.querySelector('.thank-message');thankMsg.style.display='block';const formData=new FormData(form);fetch(form.action,{method:'POST',body:formData,headers:{'Accept':'application/json'}}).then(response=>{if(response.ok){form.reset();}else{alert('Oops! There was a problem submitting your form.');}}).catch(error=>{alert('Oops! There was a problem submitting your form.');});});});
+</script>
 </body>
 </html>
